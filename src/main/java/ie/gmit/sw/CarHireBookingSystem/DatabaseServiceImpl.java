@@ -23,7 +23,7 @@ public class DatabaseServiceImpl extends UnicastRemoteObject implements Database
 
 	@Override
 	public void Read() throws RemoteException {
-		// TODO Auto-generated method stub
+		System.out.println("Working");
 		
 	}
 
