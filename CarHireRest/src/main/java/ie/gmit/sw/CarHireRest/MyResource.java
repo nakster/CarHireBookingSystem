@@ -3,12 +3,14 @@ package ie.gmit.sw.CarHireRest;
 import java.net.MalformedURLException;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
+import java.util.List;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
+import ie.gmit.sw.Models.Order;
 import ie.gmit.sw.RMI.RMIClass;
 
 /**
@@ -26,13 +28,15 @@ public class MyResource {
      * @throws RemoteException 
      * @throws MalformedURLException 
      */
-    @GET
-    @Produces(MediaType.TEXT_PLAIN)
-    public String getIt() throws Exception, RemoteException, NotBoundException {
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+    public List<Order> getIt() throws Exception, RemoteException, NotBoundException {
     	
+		//CarHireService ch;
+		//ch = (CarHireService) Naming.lookup("rmi://127.0.0.1:1099/databaseService");
+		
     	RMIClass r = new RMIClass();
-    	r.getService();
-    	
-        return "Got it!";
+       // return ch.Read();
+    	return r.getService();
     }
 }
