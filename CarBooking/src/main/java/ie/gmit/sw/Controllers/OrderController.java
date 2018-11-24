@@ -4,11 +4,13 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.xml.bind.JAXBException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -39,11 +41,11 @@ public class OrderController {
 
 	//add ship
 	// this is the get request which directs to the add ship page
-//	@RequestMapping(value = "/addShip", method = RequestMethod.GET)
-//	public String getAddShip(@ModelAttribute("ship") Ship ship, HttpServletRequest h) {
-//
-//		return "addShip";
-//	}
+	@RequestMapping(value = "/UpdateOrder", method = RequestMethod.GET)
+	public String getAddShip(@ModelAttribute("order") Order order, HttpServletRequest h) {
+
+		return "UpdateOrder";
+	}
 
 	// This is the post request which saves the ship object 
 	// then displays the new data on the display page 

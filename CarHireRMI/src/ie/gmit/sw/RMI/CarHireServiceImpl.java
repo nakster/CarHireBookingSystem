@@ -3,16 +3,14 @@ package ie.gmit.sw.RMI;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.sql.Connection;
-import java.util.Date;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
-import ie.gmit.sw.Models.Car;
-import ie.gmit.sw.Models.Customer;
 import ie.gmit.sw.Models.Order;
 
 public class CarHireServiceImpl extends UnicastRemoteObject implements CarHireService {

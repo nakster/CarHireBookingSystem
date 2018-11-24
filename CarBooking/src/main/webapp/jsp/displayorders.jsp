@@ -18,7 +18,7 @@
 			<th>Car ID</th>
 			<th>Order Date</th>
 		</tr>
-
+		<!-- the names are methods without the capital orderID and not the variable names-->
 		<c:forEach items="${orders}" var="order">
 			<tr>
 				<td>${order.orderID}</td>
