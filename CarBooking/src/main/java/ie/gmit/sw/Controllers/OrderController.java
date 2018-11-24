@@ -39,7 +39,7 @@ public class OrderController {
 		return "displayorders";
 	}
 
-	//add ship
+	//for update order
 	// this is the get request which directs to the add ship page
 	@RequestMapping(value = "/UpdateOrder", method = RequestMethod.GET)
 	public String getAddShip(@ModelAttribute("order") Order order, HttpServletRequest h) {
