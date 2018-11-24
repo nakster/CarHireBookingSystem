@@ -5,11 +5,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 import javax.xml.bind.JAXBException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -23,14 +25,14 @@ public class OrderController {
 	@Autowired
 	private OrderService orderService;
 
-	//display ships 
-	@RequestMapping(value = "/showOrders", method=RequestMethod.GET)
-	public String getShips(Model m) throws IOException, JAXBException{
+	// display ships
+	@RequestMapping(value = "/showOrders", method = RequestMethod.GET)
+	public String getShips(Model m) throws IOException, JAXBException {
 
 		List<Order> orders = (ArrayList<Order>) orderService.getOrders();
 
 		m.addAttribute("orders", orders);
-		
+
 		System.out.println("In the Controller");
 		for (Order order : orders) {
 			System.out.println(order.getOrderID());
@@ -39,27 +41,29 @@ public class OrderController {
 		return "displayorders";
 	}
 
-	//for update order
+	// for update order
 	// this is the get request which directs to the add ship page
-	@RequestMapping(value = "/UpdateOrder", method = RequestMethod.GET)
+	@RequestMapping(value = "/DeleteOrder", method = RequestMethod.GET)
 	public String getAddShip(@ModelAttribute("order") Order order, HttpServletRequest h) {
 
-		return "UpdateOrder";
+		return "DeleteOrder";
 	}
 
-	// This is the post request which saves the ship object 
-	// then displays the new data on the display page 
-//	@RequestMapping(value = "/addShip", method = RequestMethod.POST)
-//	public String postShip(@Valid @ModelAttribute("ship") Ship ship,BindingResult result) {
-//
-//		if(result.hasFieldErrors()) {			
-//			return "addShip";
-//		}else{
-//			// Pass the customer to the Customer Service for saving
-//			shipService.save(ship);
-//			return "redirect:showShips";
-//		}
-//		
-//	}
+	// This is the post request which saves the ship object
+	// then displays the new data on the display page
+	@RequestMapping(value = "/DeleteOrder", method = RequestMethod.POST)
+	public String postShip(@Valid @ModelAttribute("order") Order order, BindingResult result) {
+
+		if (result.hasFieldErrors()) {
+			return "DeleteOrder";
+		} else {
+			// Pass the customer to the Customer Service for saving
+			// orderService.save(ship);
+			System.out.println("Delete Controlllllllller");
+			System.out.println(order.getOrderID());
+			
+			return "redirect:showOrders";
+		}
+	}
 
 }

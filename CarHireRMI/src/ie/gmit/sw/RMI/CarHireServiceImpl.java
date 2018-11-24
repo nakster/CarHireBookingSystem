@@ -74,6 +74,4 @@ public class CarHireServiceImpl extends UnicastRemoteObject implements CarHireSe
 		return null;
 	}
 
-	
-
 }
