@@ -1,13 +1,11 @@
 package ie.gmit.sw.RMI;
 
 import java.rmi.Naming;
-import java.rmi.RemoteException;
 import java.util.List;
 
 import ie.gmit.sw.Models.Order;
 
 public class RMIClass {
-
 	private CarHireService ch;
 
 	public RMIClass() throws Exception {

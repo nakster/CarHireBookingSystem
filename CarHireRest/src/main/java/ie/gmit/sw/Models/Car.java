@@ -1,8 +1,13 @@
 package ie.gmit.sw.Models;
 
 import java.io.Serializable;
-import java.sql.Date;
+import java.util.Date;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlRootElement
 public class Car implements Serializable{
 
 	private static final long serialVersionUID = 1L;

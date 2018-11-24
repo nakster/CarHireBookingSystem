@@ -1,23 +1,27 @@
 package ie.gmit.sw.Models;
 
 import java.io.Serializable;
-import java.sql.Date;
-import java.util.List;
+import java.util.Date;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlRootElement
 public class Order implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	private int OrderID;
 	private int OrderNumber;
 	private Date Date;
-	private Customer cust;
-	private Car car;
+	private int cust;
+	private int car;
 	
 	public Order() {
 		super();
 	}
 
-	public Order(int orderID, int orderNumber, Date date, Customer customers,Car cars) {
+	public Order(int orderID, int orderNumber, Date date, int customers,int cars) {
 		super();
 		OrderID = orderID;
 		OrderNumber = orderNumber;
@@ -52,19 +56,19 @@ public class Order implements Serializable{
 		Date = date;
 	}
 
-	public Customer getCust() {
+	public int getCust() {
 		return cust;
 	}
 
-	public void setCust(Customer cust) {
+	public void setCust(int cust) {
 		this.cust = cust;
 	}
 
-	public Car getCar() {
+	public int getCar() {
 		return car;
 	}
 
-	public void setCar(Car car) {
+	public void setCar(int car) {
 		this.car = car;
 	}
 	

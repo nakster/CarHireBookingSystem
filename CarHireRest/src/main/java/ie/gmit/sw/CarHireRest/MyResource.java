@@ -29,7 +29,7 @@ public class MyResource {
      * @throws MalformedURLException 
      */
 	@GET
-	@Produces(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_XML)
     public List<Order> getIt() throws Exception, RemoteException, NotBoundException {
     	
 		//CarHireService ch;
