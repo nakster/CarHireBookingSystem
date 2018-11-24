@@ -7,8 +7,10 @@ import java.util.List;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 
 import ie.gmit.sw.Models.Order;
 import ie.gmit.sw.RMI.RMIClass;
@@ -19,24 +21,32 @@ import ie.gmit.sw.RMI.RMIClass;
 @Path("myresource")
 public class MyResource {
 
-    /**
-     * Method handling HTTP GET requests. The returned object will be sent
-     * to the client as "text/plain" media type.
-     *
-     * @return String that will be returned as a text/plain response.
-     * @throws NotBoundException 
-     * @throws RemoteException 
-     * @throws MalformedURLException 
-     */
+	/**
+	 * Method handling HTTP GET requests. The returned object will be sent to the
+	 * client as "text/plain" media type.
+	 *
+	 * @return String that will be returned as a text/plain response.
+	 * @throws NotBoundException
+	 * @throws RemoteException
+	 * @throws MalformedURLException
+	 */
 	@GET
 	@Produces(MediaType.APPLICATION_XML)
-    public List<Order> getIt() throws Exception, RemoteException, NotBoundException {
-    	
-		//CarHireService ch;
-		//ch = (CarHireService) Naming.lookup("rmi://127.0.0.1:1099/databaseService");
+	public List<Order> getIt() throws Exception, RemoteException, NotBoundException {
+
+		RMIClass r = new RMIClass();
+		// return ch.Read();
+		return r.readData();
+	}
+
+	@GET
+	@Path("/delete/{value}")
+	@Produces(MediaType.APPLICATION_XML)
+	public List<Order> calcSqrt(@PathParam("value") int value) throws Exception {
 		
-    	RMIClass r = new RMIClass();
-       // return ch.Read();
-    	return r.getService();
-    }
+		RMIClass r = new RMIClass();
+		r.delete(value);
+		
+		return r.readData();
+	}
 }

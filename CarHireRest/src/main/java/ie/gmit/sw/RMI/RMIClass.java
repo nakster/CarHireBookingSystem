@@ -13,7 +13,12 @@ public class RMIClass {
 
 	}
 
-	public List<Order> getService() throws Exception {
+	public List<Order> readData() throws Exception {
 		return ch.Read();
+	}
+	
+	public void delete(int id) throws Exception {
+		ch.Delete(id);
+		//return ch.Read();
 	}
 }

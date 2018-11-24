@@ -1,7 +1,9 @@
 package ie.gmit.sw.RMI;
 
 //Import RMI :- To use Remote and RemoteExcpetion
-import java.rmi.*;
+import java.rmi.Remote;
+import java.rmi.RemoteException;
+import java.sql.SQLException;
 import java.util.List;
 
 import ie.gmit.sw.Models.Order;
@@ -17,5 +19,5 @@ public interface CarHireService extends Remote{
 	//update hire
 	public String Update(String s) throws RemoteException;
 	//delete hire 
-	public String Delete(String s) throws RemoteException;
+	public void Delete(int id) throws RemoteException,SQLException;
 }

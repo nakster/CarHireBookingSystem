@@ -17,6 +17,7 @@ public class ServiceSetup {
 
 		// Print a nice message to standard output
 		System.out.println("Server ready.");
+		
 	}
 
 }
