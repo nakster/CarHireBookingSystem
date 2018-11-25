@@ -19,6 +19,9 @@ public class RMIClass {
 	
 	public void delete(int id) throws Exception {
 		ch.Delete(id);
-		//return ch.Read();
+	}
+	
+	public void create(int OrderNum, String d, int custId, int carId) throws Exception {
+		ch.Create(OrderNum,d,custId,carId);
 	}
 }

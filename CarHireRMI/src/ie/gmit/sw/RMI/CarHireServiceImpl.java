@@ -69,7 +69,7 @@ public class CarHireServiceImpl extends UnicastRemoteObject implements CarHireSe
 	}
 
 	@Override
-	public String Create(int OrderNum, String d, int custId, int carId) throws RemoteException, SQLException {
+	public void Create(int OrderNum, String d, int custId, int carId) throws RemoteException, SQLException {
 		//get the current date 
 		System.out.println("inserting into mysql");
 		System.out.println(dateFormat.format(date));
@@ -87,13 +87,11 @@ public class CarHireServiceImpl extends UnicastRemoteObject implements CarHireSe
 		p.execute();
 		p.close();
 		System.out.println("Inserted");
-		
-		return null;
 	}
 
 	@Override
-	public String Update(String s) throws RemoteException {
-		return null;
+	public void Update(String s) throws RemoteException {
+		
 	}
 
 }

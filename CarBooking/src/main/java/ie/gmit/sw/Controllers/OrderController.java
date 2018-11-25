@@ -34,7 +34,6 @@ public class OrderController {
 		List<Order> orders = (ArrayList<Order>) orderService.getOrders();
 
 		m.addAttribute("orders", orders);
-		
 
 		return "displayorders";
 	}
