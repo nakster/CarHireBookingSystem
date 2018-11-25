@@ -12,15 +12,18 @@ import ie.gmit.sw.RMI.RMIClass;
 @Path("Create")
 public class Insert {
 	
+	//private DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+	
 	@GET
 	@Path("/{value1}/{value2}/{value3}")
 	@Produces(MediaType.TEXT_HTML)
-	public Response calcSqrt(@PathParam("value1") String value1,@PathParam("value2") int value2,@PathParam("value3") int value3) throws Exception {
-			
+	public Response calcSqrt(@PathParam("value1") int value1,@PathParam("value2") int value2,@PathParam("value3") String value3) throws Exception {
+		
+		//String v = dateFormat.format(value1);
 		RMIClass r = new RMIClass();
 		r.create(value1, value2, value3);
 		
-		String msg = String.format("Order Number On : %d, Added With Customer Id: %d", value1, value3);    
+		String msg = String.format("Order Made On : %s, Added With Customer Id: %s", value3, value1);    
 		return Response.status(200).entity(msg).build();
 	}
 }

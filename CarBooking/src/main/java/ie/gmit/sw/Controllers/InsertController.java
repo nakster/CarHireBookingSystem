@@ -23,6 +23,7 @@ import ie.gmit.sw.Models.Customer;
 import ie.gmit.sw.Models.Order;
 import ie.gmit.sw.services.CarService;
 import ie.gmit.sw.services.CustomerService;
+import ie.gmit.sw.services.InsertService;
 
 @Controller
 public class InsertController {
@@ -30,6 +31,8 @@ public class InsertController {
 	private CustomerService cs;
 	@Autowired
 	private CarService carService;
+	@Autowired
+	private InsertService insertService;
 	// for update order
 	// this is the get request which directs to the add ship page
 	@RequestMapping(value = "/CreateOrder", method = RequestMethod.GET)
@@ -63,11 +66,8 @@ public class InsertController {
 				return "CreateOrder";
 			} else {
 				// Pass the customer to the Customer Service for saving
-				// orderService.save(ship);
-				System.out.println("Delete Controlllllllller");
-				//orderService.delete(order.getOrderID());
-				System.out.println(order.getCust());
-				System.out.println(order.getCar());
+				System.out.println("Insert from Controlllllllller");
+				insertService.create(order.getCust(), order.getCar());
 				return "redirect:showOrders";
 			}
 		}

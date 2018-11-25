@@ -30,7 +30,7 @@ public class RMIClass {
 		ch.Delete(id);
 	}
 	
-	public void create(String d, int custId, int carId) throws Exception {
-		ch.Create(d,custId,carId);
+	public void create(int custId, int carId,String d) throws Exception {
+		ch.Create(custId,carId,d);
 	}
 }

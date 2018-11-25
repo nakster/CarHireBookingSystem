@@ -8,8 +8,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -24,8 +22,6 @@ public class CarHireServiceImpl extends UnicastRemoteObject implements CarHireSe
 	private Connection conn;
 	private Statement stmt;
 	private PreparedStatement p = null;
-	private DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-	private Date date = new Date();
 
 	protected CarHireServiceImpl() throws RemoteException, SQLException {
 		super();
@@ -70,10 +66,10 @@ public class CarHireServiceImpl extends UnicastRemoteObject implements CarHireSe
 	}
 
 	@Override
-	public void Create(String d, int custId, int carId) throws RemoteException, SQLException {
+	public void Create(int custId, int carId,String d) throws RemoteException, SQLException {
 		//get the current date 
 		System.out.println("inserting into mysql");
-		System.out.println(dateFormat.format(date));
+		System.out.println("Date: " + d);
 		System.out.println("custId: " + custId + " carID: " + carId);
 		
 //		INSERT INTO Orders (OrderNumber, Date, CustID, CarID)
