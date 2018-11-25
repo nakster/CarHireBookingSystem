@@ -6,6 +6,7 @@ import java.rmi.RemoteException;
 import java.sql.SQLException;
 import java.util.List;
 
+import ie.gmit.sw.Models.Customer;
 import ie.gmit.sw.Models.Order;
 
 public interface CarHireService extends Remote{
@@ -20,4 +21,7 @@ public interface CarHireService extends Remote{
 	public void Update(String s) throws RemoteException;
 	//delete hire 
 	public void Delete(int id) throws RemoteException,SQLException;
+	
+	//////////
+	public List<Customer> ReadCust() throws RemoteException,Exception; 
 }

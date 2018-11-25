@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import ie.gmit.sw.Models.Customer;
 import ie.gmit.sw.Models.Order;
 
 public class CarHireServiceImpl extends UnicastRemoteObject implements CarHireService {
@@ -94,4 +95,29 @@ public class CarHireServiceImpl extends UnicastRemoteObject implements CarHireSe
 		
 	}
 
+	@Override
+	public List<Customer> ReadCust() throws RemoteException, Exception {
+		System.out.println("Reading the DataBase");
+
+		stmt = conn.createStatement();
+		List<Customer> List = new ArrayList<Customer>();
+
+		String strSelect = "select * from customers";
+
+		ResultSet rset = stmt.executeQuery(strSelect);
+
+		while (rset.next()) { // Move the cursor to the next row, return false if no more row
+
+			int CustID = rset.getInt("CustID");
+			String FirstName = rset.getString("FirstName");
+			String LastName = rset.getString("LastName");
+			int Mobile = rset.getInt("Mobile");
+			String Country = rset.getString("Country");
+			String Email = rset.getString("Email");
+
+			Customer s = new Customer(CustID,FirstName,LastName,Mobile,Country,Email);
+			List.add(s);
+		}
+		return List;
+	}
 }
