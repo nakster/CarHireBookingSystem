@@ -1,7 +1,10 @@
 package ie.gmit.sw.Controllers;
 
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -33,6 +36,9 @@ public class InsertController {
 	private CarService carService;
 	@Autowired
 	private InsertService insertService;
+	
+	private DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+	private Date date = new Date();
 	// for update order
 	// this is the get request which directs to the add ship page
 	@RequestMapping(value = "/CreateOrder", method = RequestMethod.GET)
@@ -51,8 +57,14 @@ public class InsertController {
 			carList.put((long) c.getCarID(), "Brand: " + " " +  c.getCarBrand() +  " Model: " + c.getCarModel());
 		}
 		
+		Map<Long, String> d = new HashMap<Long,String>();
+		d.put((long) 1, dateFormat.format(date));
+		
 		m.addAttribute("custList", custList);
 		m.addAttribute("carList", carList);
+		m.addAttribute("date", d);
+		
+		System.out.println("Insert: " + dateFormat.format(date));
 		
 		return "CreateOrder";
 	}

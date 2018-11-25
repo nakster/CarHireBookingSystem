@@ -42,6 +42,5 @@ public class InsertService {
         System.out.println(dateFormat.format(date));
 		System.out.println("\nSending request to URL : " + url);
 		System.out.println("Response Code : " + con.getResponseCode());
-		System.out.println("Response Message : " + con.getResponseMessage());
 	}
 }

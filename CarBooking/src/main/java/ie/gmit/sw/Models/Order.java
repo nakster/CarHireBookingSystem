@@ -18,6 +18,9 @@ public class Order implements Serializable {
 	private Date Date;
 	private int cust;
 	private int car;
+	
+	//for just displaying it in spring
+	private String d;
 
 	@XmlElement(name = "order")
 	private List<Order> orders = null;
@@ -72,6 +75,14 @@ public class Order implements Serializable {
 
 	public void setOrders(List<Order> orders) {
 		this.orders = orders;
+	}
+
+	public String getD() {
+		return d;
+	}
+
+	public void setD(String d) {
+		this.d = d;
 	}
 
 }

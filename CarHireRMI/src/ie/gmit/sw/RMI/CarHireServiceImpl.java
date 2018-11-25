@@ -35,7 +35,7 @@ public class CarHireServiceImpl extends UnicastRemoteObject implements CarHireSe
 		stmt = conn.createStatement();
 		List<Order> List = new ArrayList<Order>();
 
-		String strSelect = "select * from orders";
+		String strSelect = "select * from orders ORDER BY OrderID";
 
 		ResultSet rset = stmt.executeQuery(strSelect);
 

@@ -12,14 +12,7 @@
 	<h1>Create Here</h1>
 	<form:form modelAttribute="order">
 		<table>
-			<!--  	<tr>
-				<td>Enter Order Id:</td>
-				
-				<td><form:input path="OrderID"></form:input></td>
-				<td><form:errors path="OrderID"></form:errors></td>
-			</tr> 
-		-->
-			<!-- the path has to be the same name as in the model -->
+<!-- the path has to be the same name as in the model -->
 			<tr>
 				<td>Select One of the customers:</td>
 				<td><form:select path="cust" items="${custList}" /></td>
@@ -29,6 +22,11 @@
 				<td>Select a Car Brand and Model:</td>
 				<td><form:select path="car" items="${carList}" /></td>
 				<td><form:errors path="car" items="${carList}" /></td>
+			</tr>
+			<tr>
+				<td>Current Date:</td>
+				<td><form:select path="d" items="${date}" /></td>
+				<td><form:errors path="d" items="${date}" /></td>
 			</tr>
 			<tr>
 				<td colspan="2"><input type="submit" value="Delete" /></td>
