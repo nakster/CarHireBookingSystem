@@ -11,10 +11,10 @@
 <body>
 	<!-- This is where the model-attribute is used from the controller -->
 	<form:form modelAttribute="order">
-		<h1>Add Ship</h1>
+		<h1>Delete a Order</h1>
 		<table>
 			<tr>
-				<td>Order Id:</td>
+				<td>Enter Order Id:</td>
 				<!-- the path has to be the same name as in the model -->
 				<td><form:input path="OrderID"></form:input></td>
 				<td><form:errors path="OrderID"></form:errors></td>

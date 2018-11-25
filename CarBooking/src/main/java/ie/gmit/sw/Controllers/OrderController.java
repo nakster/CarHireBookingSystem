@@ -33,11 +33,6 @@ public class OrderController {
 
 		m.addAttribute("orders", orders);
 
-		System.out.println("In the Controller");
-		for (Order order : orders) {
-			System.out.println(order.getOrderID());
-		}
-
 		return "displayorders";
 	}
 
@@ -52,7 +47,7 @@ public class OrderController {
 	// This is the post request which saves the ship object
 	// then displays the new data on the display page
 	@RequestMapping(value = "/DeleteOrder", method = RequestMethod.POST)
-	public String postShip(@Valid @ModelAttribute("order") Order order, BindingResult result) {
+	public String postShip(@Valid @ModelAttribute("order") Order order, BindingResult result) throws IOException {
 
 		if (result.hasFieldErrors()) {
 			return "DeleteOrder";
@@ -60,8 +55,8 @@ public class OrderController {
 			// Pass the customer to the Customer Service for saving
 			// orderService.save(ship);
 			System.out.println("Delete Controlllllllller");
-			System.out.println(order.getOrderID());
-			
+			orderService.delete(order.getOrderID());
+			//System.out.println(order.getOrderID());
 			return "redirect:showOrders";
 		}
 	}

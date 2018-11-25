@@ -8,6 +8,7 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -47,21 +48,37 @@ public class OrderService {
 
 		JAXBContext jc = JAXBContext.newInstance(Order.class);
 		Unmarshaller ums = jc.createUnmarshaller();
-
 		Order emps = (Order) ums.unmarshal(new File("Order.xml"));
-		System.out.println("Order Info");
-
-		for (Order emp : emps.getOrders()) {
-			System.out.println(emp.getOrderID());
-			System.out.println(emp.getOrderNumber());
-		}
-		
+	
 		o.addAll(emps.getOrders());
-		
-//		for (Order order : o) {
-//			System.out.println(order.getOrderID());
-//		}
-
 		return o;
+	}
+	private final String USER_AGENT = "Mozilla/5.0";
+	
+	public void delete(int id) throws IOException {
+//		String u = "http://localhost:8080/CarHireRest/webapi/myresource/delete/6";
+//		
+//		URL url = new URL(u);
+//		HttpURLConnection con = (HttpURLConnection) url.openConnection();
+//		con.setRequestMethod("GET");
+//		
+//		
+//		System.out.println(url);
+		
+	    String username=""+id;
+        StringBuilder stringBuilder = new StringBuilder("http://localhost:8080/CarHireRest/webapi/myresource");
+        stringBuilder.append("/delete/");
+        stringBuilder.append(URLEncoder.encode(username, "UTF-8"));
+        
+        URL url = new URL(stringBuilder.toString());
+ 
+		HttpURLConnection con = (HttpURLConnection) url.openConnection();
+		con.setRequestMethod("GET");
+		con.setRequestProperty("User-Agent", USER_AGENT);
+		con.setRequestProperty("Accept-Charset", "UTF-8");
+ 
+		System.out.println("\nSending request to URL : " + url);
+		System.out.println("Response Code : " + con.getResponseCode());
+		System.out.println("Response Message : " + con.getResponseMessage());
 	}
 }
