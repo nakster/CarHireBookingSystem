@@ -22,6 +22,8 @@ import ie.gmit.sw.Models.Order;
 
 @Service
 public class OrderService {
+	
+	private final String USER_AGENT = "Mozilla/5.0";
 
 	public List<Order> getOrders() throws IOException, JAXBException {
 		URL url = new URL("http://localhost:8080/CarHireRest/webapi/myresource");
@@ -53,18 +55,8 @@ public class OrderService {
 		o.addAll(emps.getOrders());
 		return o;
 	}
-	private final String USER_AGENT = "Mozilla/5.0";
 	
 	public void delete(int id) throws IOException {
-//		String u = "http://localhost:8080/CarHireRest/webapi/myresource/delete/6";
-//		
-//		URL url = new URL(u);
-//		HttpURLConnection con = (HttpURLConnection) url.openConnection();
-//		con.setRequestMethod("GET");
-//		
-//		
-//		System.out.println(url);
-		
 	    String username=""+id;
         StringBuilder stringBuilder = new StringBuilder("http://localhost:8080/CarHireRest/webapi/myresource");
         stringBuilder.append("/delete/");
