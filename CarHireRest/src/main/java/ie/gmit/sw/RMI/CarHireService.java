@@ -19,7 +19,7 @@ public interface CarHireService extends Remote{
 	//this methods reads all the hires 
 	public List<Order> Read() throws RemoteException,Exception; 
 	//update hire
-	public void Update(String s) throws RemoteException;
+	public void Update(int orderId, int custId, int carId) throws RemoteException,SQLException;
 	//delete hire 
 	public void Delete(int id) throws RemoteException,SQLException;
 	

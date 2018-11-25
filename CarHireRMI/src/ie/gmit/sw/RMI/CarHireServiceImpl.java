@@ -8,6 +8,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -22,6 +24,8 @@ public class CarHireServiceImpl extends UnicastRemoteObject implements CarHireSe
 	private Connection conn;
 	private Statement stmt;
 	private PreparedStatement p = null;
+	private DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+	private Date date = new Date();
 
 	protected CarHireServiceImpl() throws RemoteException, SQLException {
 		super();
@@ -86,8 +90,18 @@ public class CarHireServiceImpl extends UnicastRemoteObject implements CarHireSe
 	}
 
 	@Override
-	public void Update(String s) throws RemoteException {
+	public void Update(int orderId, int custId, int carId) throws RemoteException, SQLException {
+		String d = dateFormat.format(date);
 		
+		String sql = "update orders set CustID = ?,  CarID = ?, Date = ?  where OrderID = ?";
+		p = conn.prepareStatement(sql);
+		p.setInt(1, custId);
+		p.setInt(2, carId);
+		p.setString(3, d);
+		p.setInt(4, orderId);
+		p.execute();
+		p.close();
+		System.out.println("Updated");
 	}
 
 	@Override

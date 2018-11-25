@@ -26,11 +26,18 @@ public class RMIClass {
 		return ch.ReadCars();
 	}
 	
+	//=============== Delete ===================  
 	public void delete(int id) throws Exception {
 		ch.Delete(id);
 	}
 	
+	//=============== create =================== 
 	public void create(int custId, int carId,String d) throws Exception {
 		ch.Create(custId,carId,d);
+	}
+	
+	//=============== Update =================== 
+	public void update(int orderId, int custId, int carId) throws Exception {
+		ch.Update(orderId, custId, carId);
 	}
 }

@@ -29,7 +29,7 @@
 				<td><form:errors path="d" items="${date}" /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><input type="submit" value="Delete" /></td>
+				<td colspan="2"><input type="submit" value="Create Order" /></td>
 			</tr>
 		</table>
 	
