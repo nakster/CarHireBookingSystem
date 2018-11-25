@@ -13,7 +13,7 @@ public interface CarHireService extends Remote{
 	//====================These will need updating =================================
 	//methods 
 	//this method here creates a booking 
-	public String Create(String s) throws RemoteException;
+	public String Create(int OrderNum, String d, int custId, int carId) throws RemoteException,SQLException;
 	//this methods reads all the hires 
 	public List<Order> Read() throws RemoteException,Exception; 
 	//update hire

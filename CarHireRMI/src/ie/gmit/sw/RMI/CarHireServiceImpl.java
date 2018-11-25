@@ -8,6 +8,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -20,6 +22,8 @@ public class CarHireServiceImpl extends UnicastRemoteObject implements CarHireSe
 	private Connection conn;
 	private Statement stmt;
 	private PreparedStatement p = null;
+	private DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+	private Date date = new Date();
 
 	protected CarHireServiceImpl() throws RemoteException, SQLException {
 		super();
@@ -65,7 +69,25 @@ public class CarHireServiceImpl extends UnicastRemoteObject implements CarHireSe
 	}
 
 	@Override
-	public String Create(String s) throws RemoteException {
+	public String Create(int OrderNum, String d, int custId, int carId) throws RemoteException, SQLException {
+		//get the current date 
+		System.out.println("inserting into mysql");
+		System.out.println(dateFormat.format(date));
+		System.out.println("OrderNum: " + OrderNum + " custId: " + custId + " carID: " + carId);
+		
+//		INSERT INTO Orders (OrderNumber, Date, CustID, CarID)
+//		VALUES (7839,CURDATE(),1,1),
+		
+		String sql = "insert into Orders(OrderNumber, Date, CustID, CarID) values (?, ?, ?, ?)";
+		p = conn.prepareStatement(sql);
+		p.setInt(1, OrderNum);
+		p.setString(2, d);
+		p.setInt(3, custId);
+		p.setInt(4, carId);
+		p.execute();
+		p.close();
+		System.out.println("Inserted");
+		
 		return null;
 	}
 
