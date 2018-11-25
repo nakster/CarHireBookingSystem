@@ -13,6 +13,7 @@ public class Car implements Serializable{
 	private static final long serialVersionUID = 1L;
 	private int CarID;
 	private String CarColour;
+	private String CarBrand;
 	private String CarModel;
 	private Date PurchaseDate;
 	
@@ -20,10 +21,11 @@ public class Car implements Serializable{
 		super();
 	}
 	
-	public Car(int carID, String carColour, String carModel, Date purchaseDate) {
+	public Car(int carID, String carColour,String carBrand, String carModel, Date purchaseDate) {
 		super();
 		CarID = carID;
 		CarColour = carColour;
+		CarBrand = carBrand;
 		CarModel = carModel;
 		PurchaseDate = purchaseDate;
 	}
@@ -38,6 +40,14 @@ public class Car implements Serializable{
 
 	public String getCarColour() {
 		return CarColour;
+	}
+
+	public String getCarBrand() {
+		return CarBrand;
+	}
+
+	public void setCarBrand(String carBrand) {
+		CarBrand = carBrand;
 	}
 
 	public void setCarColour(String carColour) {

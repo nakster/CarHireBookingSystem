@@ -80,8 +80,8 @@ public class Order implements Serializable {
 		return orders;
 	}
 
-	public void setOrders(List<Order> employees) {
-		this.orders = employees;
+	public void setOrders(List<Order> orders) {
+		this.orders = orders;
 	}
 
 }

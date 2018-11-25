@@ -21,7 +21,6 @@ CREATE TABLE IF NOT EXISTS CAR(
 
 CREATE TABLE IF NOT EXISTS Orders (
     OrderID int NOT NULL AUTO_INCREMENT,
-    OrderNumber int NOT NULL,
 	Date DATE Not Null,
     CustID int Not Null,
 	CarID int Not Null,
@@ -46,19 +45,19 @@ VALUES ('Blue','Hyundai I10','I10',CURDATE()),
 	   
 
 
-INSERT INTO Orders (OrderNumber, Date, CustID, CarID)
-VALUES (1234,CURDATE(),1,1),
-	   (5678,CURDATE(),2,2),
-	   (9101,CURDATE(),3,3);
+INSERT INTO Orders (Date, CustID, CarID)
+VALUES (CURDATE(),1,1),
+	   (CURDATE(),2,2),
+	   (CURDATE(),3,3);
 
 	   
 
-INSERT INTO Orders (OrderNumber, Date, CustID, CarID)
-VALUES (7839,CURDATE(),1,1),
-	   (7830,CURDATE(),2,2),
-	   (4782,CURDATE(),3,3),
-	   (3947,CURDATE(),1,1),
-	   (7840,CURDATE(),2,2);
+INSERT INTO Orders (Date, CustID, CarID)
+VALUES (CURDATE(),1,1),
+	   (CURDATE(),2,2),
+	   (CURDATE(),3,3),
+	   (CURDATE(),1,1),
+	   (CURDATE(),2,2);
 
 <!--- DELETE FROM Orders WHERE OrderID=1; -->
 

@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import ie.gmit.sw.Models.Car;
 import ie.gmit.sw.Models.Customer;
 import ie.gmit.sw.Models.Order;
 
@@ -97,7 +98,7 @@ public class CarHireServiceImpl extends UnicastRemoteObject implements CarHireSe
 
 	@Override
 	public List<Customer> ReadCust() throws RemoteException, Exception {
-		System.out.println("Reading the DataBase");
+		System.out.println("Reading Customers the DataBase");
 
 		stmt = conn.createStatement();
 		List<Customer> List = new ArrayList<Customer>();
@@ -116,6 +117,31 @@ public class CarHireServiceImpl extends UnicastRemoteObject implements CarHireSe
 			String Email = rset.getString("Email");
 
 			Customer s = new Customer(CustID,FirstName,LastName,Mobile,Country,Email);
+			List.add(s);
+		}
+		return List;
+	}
+
+	@Override
+	public List<Car> ReadCars() throws RemoteException, Exception {
+		System.out.println("Reading the DataBase");
+
+		stmt = conn.createStatement();
+		List<Car> List = new ArrayList<Car>();
+
+		String strSelect = "select * from car";
+
+		ResultSet rset = stmt.executeQuery(strSelect);
+
+		while (rset.next()) { // Move the cursor to the next row, return false if no more row
+
+			int CarID = rset.getInt("CarID");
+			String CarColour = rset.getString("CarColour");
+			String CarBrand = rset.getString("CarBrand");
+			String CarModel = rset.getString("CarModel");
+			Date PurchaseDate = rset.getDate("PurchaseDate");
+			
+			Car s = new Car(CarID,CarColour,CarBrand,CarModel,PurchaseDate);
 			List.add(s);
 		}
 		return List;

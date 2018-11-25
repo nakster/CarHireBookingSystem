@@ -3,6 +3,7 @@ package ie.gmit.sw.RMI;
 import java.rmi.Naming;
 import java.util.List;
 
+import ie.gmit.sw.Models.Car;
 import ie.gmit.sw.Models.Customer;
 import ie.gmit.sw.Models.Order;
 
@@ -20,6 +21,9 @@ public class RMIClass {
 	}
 	public List<Customer> readCustomer() throws Exception {
 		return ch.ReadCust();
+	}
+	public List<Car> readCars() throws Exception {
+		return ch.ReadCars();
 	}
 	
 	public void delete(int id) throws Exception {
