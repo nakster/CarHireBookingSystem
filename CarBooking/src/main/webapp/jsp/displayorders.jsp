@@ -13,7 +13,6 @@
 	<table>
 		<tr>
 			<th>Order ID</th>
-			<th>Order Number</th>
 			<th>Customer ID</th>
 			<th>Car ID</th>
 			<th>Order Date</th>
@@ -22,7 +21,6 @@
 		<c:forEach items="${orders}" var="order">
 			<tr>
 				<td>${order.orderID}</td>
-				<td>${order.orderNumber}</td>
 				<td>${order.cust}</td>
 				<td>${order.car}</td>
 				<td>${order.date}</td>

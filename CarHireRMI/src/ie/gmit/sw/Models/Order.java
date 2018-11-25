@@ -13,7 +13,6 @@ public class Order implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	private int OrderID;
-	private int OrderNumber;
 	private Date Date;
 	private int cust;
 	private int car;
@@ -22,10 +21,9 @@ public class Order implements Serializable{
 		super();
 	}
 
-	public Order(int orderID, int orderNumber, Date date, int customers,int cars) {
+	public Order(int orderID, Date date, int customers,int cars) {
 		super();
 		OrderID = orderID;
-		OrderNumber = orderNumber;
 		Date = date;
 		cust = customers;
 		car = cars;
@@ -39,14 +37,6 @@ public class Order implements Serializable{
 
 	public void setOrderID(int orderID) {
 		OrderID = orderID;
-	}
-
-	public int getOrderNumber() {
-		return OrderNumber;
-	}
-
-	public void setOrderNumber(int orderNumber) {
-		OrderNumber = orderNumber;
 	}
 
 	public Date getDate() {

@@ -47,7 +47,7 @@ public class OrderController {
 
 		Map<Long,String> shipList = new HashMap<Long,String>();
 		for (Order c : orders) {
-				shipList.put((long) c.getOrderID(), "Id: " + " " +  c.getOrderID() +  " Order Number: " + c.getOrderNumber());
+				shipList.put((long) c.getOrderID(), "Id: " + " " +  c.getOrderID() +  " Order Date: " + c.getDate());
 		}
 		
 		m.addAttribute("shipList", shipList);

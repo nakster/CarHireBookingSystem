@@ -7,7 +7,6 @@ import java.sql.SQLException;
 import java.util.List;
 
 import ie.gmit.sw.Models.Car;
-import ie.gmit.sw.Models.Car;
 import ie.gmit.sw.Models.Customer;
 import ie.gmit.sw.Models.Order;
 
@@ -16,7 +15,7 @@ public interface CarHireService extends Remote{
 	//====================These will need updating =================================
 	//methods 
 	//this method here creates a booking 
-	public void Create(int OrderNum, String d, int custId, int carId) throws RemoteException,SQLException;
+	public void Create(String d, int custId, int carId) throws RemoteException,SQLException;
 	//this methods reads all the hires 
 	public List<Order> Read() throws RemoteException,Exception; 
 	//update hire

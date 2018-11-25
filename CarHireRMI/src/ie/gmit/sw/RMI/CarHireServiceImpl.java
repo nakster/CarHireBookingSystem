@@ -46,12 +46,11 @@ public class CarHireServiceImpl extends UnicastRemoteObject implements CarHireSe
 		while (rset.next()) { // Move the cursor to the next row, return false if no more row
 
 			int OrderID = rset.getInt("OrderID");
-			int OrderNumber = rset.getInt("OrderNumber");
 			Date Date = rset.getDate("Date");
 			int cust = rset.getInt("CustID");
 			int car = rset.getInt("CarID");
 
-			Order s = new Order(OrderID, OrderNumber, Date, cust, car);
+			Order s = new Order(OrderID, Date, cust, car);
 			List.add(s);
 		}
 		return List;
@@ -71,21 +70,20 @@ public class CarHireServiceImpl extends UnicastRemoteObject implements CarHireSe
 	}
 
 	@Override
-	public void Create(int OrderNum, String d, int custId, int carId) throws RemoteException, SQLException {
+	public void Create(String d, int custId, int carId) throws RemoteException, SQLException {
 		//get the current date 
 		System.out.println("inserting into mysql");
 		System.out.println(dateFormat.format(date));
-		System.out.println("OrderNum: " + OrderNum + " custId: " + custId + " carID: " + carId);
+		System.out.println("custId: " + custId + " carID: " + carId);
 		
 //		INSERT INTO Orders (OrderNumber, Date, CustID, CarID)
 //		VALUES (7839,CURDATE(),1,1),
 		
-		String sql = "insert into Orders(OrderNumber, Date, CustID, CarID) values (?, ?, ?, ?)";
+		String sql = "insert into Orders(Date, CustID, CarID) values (?, ?, ?)";
 		p = conn.prepareStatement(sql);
-		p.setInt(1, OrderNum);
-		p.setString(2, d);
-		p.setInt(3, custId);
-		p.setInt(4, carId);
+		p.setString(1, d);
+		p.setInt(2, custId);
+		p.setInt(3, carId);
 		p.execute();
 		p.close();
 		System.out.println("Inserted");

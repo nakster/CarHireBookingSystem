@@ -13,14 +13,14 @@ import ie.gmit.sw.RMI.RMIClass;
 public class Insert {
 	
 	@GET
-	@Path("/{value1}/{value2}/{value3}/{value4}")
+	@Path("/{value1}/{value2}/{value3}")
 	@Produces(MediaType.TEXT_HTML)
-	public Response calcSqrt(@PathParam("value1") int value1,@PathParam("value2") String value2,@PathParam("value3") int value3,@PathParam("value4") int value4) throws Exception {
+	public Response calcSqrt(@PathParam("value1") String value1,@PathParam("value2") int value2,@PathParam("value3") int value3) throws Exception {
 			
 		RMIClass r = new RMIClass();
-		r.create(value1, value2, value3, value4);
+		r.create(value1, value2, value3);
 		
-		String msg = String.format("Order Number ===>: %d, Added With Customer Id: %d", value1, value3);    
+		String msg = String.format("Order Number On : %d, Added With Customer Id: %d", value1, value3);    
 		return Response.status(200).entity(msg).build();
 	}
 }

@@ -24,7 +24,7 @@ CREATE TABLE IF NOT EXISTS Orders (
 	Date DATE Not Null,
     CustID int Not Null,
 	CarID int Not Null,
-	UNIQUE(OrderNumber),
+	UNIQUE(OrderID),
     PRIMARY KEY (OrderID),
     FOREIGN KEY (CustID) REFERENCES Customers(CustID),
 	FOREIGN KEY (CarID) REFERENCES CAR(CarID)
