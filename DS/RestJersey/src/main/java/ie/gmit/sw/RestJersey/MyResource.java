@@ -11,6 +11,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
+import ie.gmit.sw.Consumes.DeleteOrderId;
 import ie.gmit.sw.Model.Order;
 import ie.gmit.sw.rmi.RMIClass;
 
@@ -36,21 +37,4 @@ public class MyResource {
 		RMIClass r = new RMIClass();
 		return r.read();
 	}
-	
-	@Path("both")
-    @POST
-    @Consumes(MediaType.APPLICATION_XML)
-    public void getBothRequest(Student s)
-    {
-        System.out.println("****Student Details*****");
-        System.out.println("Student Name : "+s.getName());
-        System.out.println("Student Age  : "+s.getAge());
-    }
-	
-//	@POST
-//	@Consumes(MediaType.APPLICATION_XML)
-//	public Order d(Order o) {
-//		System.out.println("In delte");
-//		return o;
-//	}
 }
