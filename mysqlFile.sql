@@ -73,6 +73,6 @@ ON Orders.CarID=ca.CarID;
 <!--- DELETE FROM Orders WHERE OrderID=1; -->
 
 
-xjc -d C:\Users\naqia\Desktop\Sarah -p ie.gmit.sw.Model C:\Users\naqia\Desktop\Sarah\RMI\src\ie\gmit\sw\Model\generateSchema.xsd
+xjc -d C:\Users\naqia\Desktop\Sarah -p gmit.Model C:\Users\naqia\Desktop\Sarah\RMI\src\ie\gmit\sw\Model\generateSchema.xsd
  
 
