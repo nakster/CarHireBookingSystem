@@ -20,6 +20,7 @@ public class DatabaseServiceImpl extends UnicastRemoteObject implements Database
 	private static final long serialVersionUID = 1L;
 	private Connection conn;
 	private Statement stmt;
+	private List<Order> orderList ;
 
 	protected DatabaseServiceImpl() throws RemoteException, SQLException {
 		super();
@@ -33,9 +34,7 @@ public class DatabaseServiceImpl extends UnicastRemoteObject implements Database
 
 		stmt = conn.createStatement();
 
-		List<Order> orderList = new ArrayList<Order>();
-		List<Customer> custList = new ArrayList<Customer>();
-		List<Car> carList = new ArrayList<Car>();
+		orderList = new ArrayList<Order>();
 	
 		String strSelect = "select orderid , Date, \r\n" + 
 				"c.CustID,c.FirstName,c.LastName,c.Mobile,c.Country,c.Email,\r\n" + 
@@ -44,7 +43,7 @@ public class DatabaseServiceImpl extends UnicastRemoteObject implements Database
 				"INNER JOIN Customers as c\r\n" + 
 				"ON Orders.CustID=c.CustID\r\n" + 
 				"INNER JOIN CAR as ca\r\n" + 
-				"ON Orders.CarID=ca.CarID";
+				"ON Orders.CarID=ca.CarID ORDER BY orderid";
 
 		ResultSet rset = stmt.executeQuery(strSelect);
 
