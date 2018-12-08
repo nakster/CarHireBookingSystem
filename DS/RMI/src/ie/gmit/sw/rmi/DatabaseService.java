@@ -18,6 +18,6 @@ public interface DatabaseService extends Remote {
 	// delete hire
 	public void delete(int id) throws RemoteException, SQLException;
 
-	// delete hire
-	public void Delete(int id) throws RemoteException, SQLException;
+	//this method here creates a booking 
+	public void Create(int custId, int carId,String d) throws RemoteException,SQLException;
 }

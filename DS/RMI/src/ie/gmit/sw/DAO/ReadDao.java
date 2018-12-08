@@ -14,15 +14,24 @@ import ie.gmit.sw.Model.Customer;
 import ie.gmit.sw.Model.Order;
 
 public class ReadDao {
+	
+	// Declared Variables 
 	private Connection conn;
 	private Statement stmt;
 	private List<Order> orderList;
+	// prepare statement
+	String strSelect = "select orderid , Date, \r\n" + "c.CustID,c.FirstName,c.LastName,c.Mobile,c.Country,c.Email,\r\n"
+			+ "ca.CarID, ca.CarColour, ca.CarBrand, ca.CarModel, ca.PurchaseDate\r\n" + "FROM Orders\r\n"
+			+ "INNER JOIN Customers as c\r\n" + "ON Orders.CustID=c.CustID\r\n" + "INNER JOIN CAR as ca\r\n"
+			+ "ON Orders.CarID=ca.CarID ORDER BY orderid";
 
+	//constructor to instaicate the connection 
 	public ReadDao() throws SQLException {
 		super();
 		conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/carhire?useSSL=false", "root", "");
 	}
 
+	//method that returns list of order objects 
 	public List<Order> read() throws SQLException {
 
 		System.out.println("In read");
@@ -31,13 +40,6 @@ public class ReadDao {
 		stmt = conn.createStatement();
 		// create a list to store the mysql objects
 		orderList = new ArrayList<Order>();
-
-		// prepare statement
-		String strSelect = "select orderid , Date, \r\n"
-				+ "c.CustID,c.FirstName,c.LastName,c.Mobile,c.Country,c.Email,\r\n"
-				+ "ca.CarID, ca.CarColour, ca.CarBrand, ca.CarModel, ca.PurchaseDate\r\n" + "FROM Orders\r\n"
-				+ "INNER JOIN Customers as c\r\n" + "ON Orders.CustID=c.CustID\r\n" + "INNER JOIN CAR as ca\r\n"
-				+ "ON Orders.CarID=ca.CarID ORDER BY orderid";
 
 		// execute the query
 		ResultSet rset = stmt.executeQuery(strSelect);
@@ -73,7 +75,8 @@ public class ReadDao {
 			// the jersey project
 			orderList.add(s);
 		}
-		
+
+		stmt.close();
 		conn.close();
 		return orderList;
 	}

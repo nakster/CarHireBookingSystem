@@ -22,6 +22,11 @@ public class DatabaseServiceImpl extends UnicastRemoteObject implements Database
 		ReadDao readDao = new ReadDao();
 		return readDao.read();
 	}
+	
+	@Override
+	public void delete(int id) throws RemoteException, SQLException {
+		
+	}
 
 	@Override
 	public void update(int orderId, int custId, int carId) throws RemoteException, SQLException {
@@ -29,12 +34,8 @@ public class DatabaseServiceImpl extends UnicastRemoteObject implements Database
 	}
 
 	@Override
-	public void delete(int id) throws RemoteException, SQLException {
-		
-	}
-
-	@Override
-	public void Delete(int id) throws RemoteException, SQLException {
+	public void Create(int custId, int carId, String d) throws RemoteException, SQLException {
+		// TODO Auto-generated method stub
 		
 	}
 

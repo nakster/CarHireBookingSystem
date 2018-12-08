@@ -67,12 +67,12 @@ FROM Orders
 INNER JOIN Customers as c
 ON Orders.CustID=c.CustID
 INNER JOIN CAR as ca
-ON Orders.CarID=ca.CarID;
+ON Orders.CarID=ca.CarID ORDER by orderid;
 
 
 <!--- DELETE FROM Orders WHERE OrderID=1; -->
 
 
-xjc -d C:\Users\naqia\Desktop\Sarah -p gmit.Model C:\Users\naqia\Desktop\Sarah\RMI\src\ie\gmit\sw\Model\generateSchema.xsd
+xjc -d C:\Users\naqia\Desktop\Sarah -p gmit.Model C:\Users\naqia\Desktop\GithubDistributed\github\CarHireBookingSystem\DS\RMI\src\ie\gmit\sw\Model\generateSchema.xsd
  
 
