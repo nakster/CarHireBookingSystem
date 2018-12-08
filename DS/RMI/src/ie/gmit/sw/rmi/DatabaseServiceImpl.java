@@ -7,6 +7,7 @@ import java.util.List;
 
 import ie.gmit.sw.DAO.DeleteDao;
 import ie.gmit.sw.DAO.ReadDao;
+import ie.gmit.sw.DAO.UpdateDao;
 import ie.gmit.sw.Model.Order;
 
 public class DatabaseServiceImpl extends UnicastRemoteObject implements DatabaseService {
@@ -14,6 +15,7 @@ public class DatabaseServiceImpl extends UnicastRemoteObject implements Database
 	private static final long serialVersionUID = 1L;
 	private ReadDao readDao;
 	private DeleteDao deleteDao;
+	private UpdateDao updateDao;
 
 	protected DatabaseServiceImpl() throws RemoteException, SQLException {
 		super();
@@ -36,7 +38,9 @@ public class DatabaseServiceImpl extends UnicastRemoteObject implements Database
 
 	@Override
 	public void update(int orderId, int custId, int carId) throws RemoteException, SQLException {
-		
+		// This updates a object in mysql
+		updateDao = new UpdateDao();
+		updateDao.Update(orderId, custId, carId);
 	}
 
 	@Override

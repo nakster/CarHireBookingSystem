@@ -24,7 +24,7 @@ public class CarHireServiceImpl extends UnicastRemoteObject implements CarHireSe
 	private Connection conn;
 	private Statement stmt;
 	private PreparedStatement p = null;
-	private DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+	//private DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 	private Date date = new Date();
 
 	protected CarHireServiceImpl() throws RemoteException, SQLException {
