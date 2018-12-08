@@ -3,8 +3,10 @@ package ie.gmit.sw.rmi;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.sql.SQLException;
+import java.util.Date;
 import java.util.List;
 
+import ie.gmit.sw.DAO.CreateDao;
 import ie.gmit.sw.DAO.DeleteDao;
 import ie.gmit.sw.DAO.ReadDao;
 import ie.gmit.sw.DAO.UpdateDao;
@@ -16,6 +18,7 @@ public class DatabaseServiceImpl extends UnicastRemoteObject implements Database
 	private ReadDao readDao;
 	private DeleteDao deleteDao;
 	private UpdateDao updateDao;
+	private CreateDao createDao;
 
 	protected DatabaseServiceImpl() throws RemoteException, SQLException {
 		super();
@@ -44,9 +47,11 @@ public class DatabaseServiceImpl extends UnicastRemoteObject implements Database
 	}
 
 	@Override
-	public void Create(int custId, int carId, String d) throws RemoteException, SQLException {
-		// TODO Auto-generated method stub
+	public void create(int custId, int carId) throws RemoteException, SQLException {
 		
+		//adds a new order
+		createDao = new CreateDao();
+		createDao.Create(custId, carId);
 	}
 
 }

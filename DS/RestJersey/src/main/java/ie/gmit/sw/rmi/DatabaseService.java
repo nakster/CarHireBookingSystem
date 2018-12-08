@@ -3,6 +3,7 @@ package ie.gmit.sw.rmi;
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.sql.SQLException;
+import java.util.Date;
 import java.util.List;
 
 import ie.gmit.sw.Model.Order;
@@ -19,5 +20,5 @@ public interface DatabaseService extends Remote {
 	public void delete(int id) throws RemoteException, SQLException;
 
 	// this method here creates a booking
-	public void Create(int custId, int carId, String d) throws RemoteException, SQLException;
+	public void create(int custId, int carId) throws RemoteException, SQLException;
 }
