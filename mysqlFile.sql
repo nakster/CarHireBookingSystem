@@ -1,4 +1,5 @@
 Create DATABASE CARHIRE;
+use CARHIRE;
 
 CREATE TABLE IF NOT EXISTS Customers (
     CustID int NOT NULL AUTO_INCREMENT,
@@ -58,8 +59,20 @@ VALUES (CURDATE(),1,1),
 	   (CURDATE(),3,3),
 	   (CURDATE(),1,1),
 	   (CURDATE(),2,2);
+	   
+select orderid , Date, 
+c.CustID,c.FirstName,c.LastName,c.Mobile,c.Country,c.Email,
+ca.CarID, ca.CarColour, ca.CarBrand, ca.CarModel, ca.PurchaseDate
+FROM Orders
+INNER JOIN Customers as c
+ON Orders.CustID=c.CustID
+INNER JOIN CAR as ca
+ON Orders.CarID=ca.CarID;
+
 
 <!--- DELETE FROM Orders WHERE OrderID=1; -->
 
+
+xjc -d C:\Users\naqia\Desktop\Sarah -p ie.gmit.sw.Model C:\Users\naqia\Desktop\Sarah\RMI\src\ie\gmit\sw\Model\generateSchema.xsd
  
 

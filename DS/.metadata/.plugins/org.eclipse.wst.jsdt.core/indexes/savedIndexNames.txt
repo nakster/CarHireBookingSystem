@@ -1,0 +1,7 @@
+INDEX VERSION 1.4+C:\Users\naqia\Desktop\DS\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+3507304329.index
+1502990313.index
+21686928.index
+935545753.index
+978923223.index
+30568864.index

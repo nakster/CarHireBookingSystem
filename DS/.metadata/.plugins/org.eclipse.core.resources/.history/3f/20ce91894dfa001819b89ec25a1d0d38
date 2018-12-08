@@ -1,0 +1,5 @@
+package ie.gmit.sw.rmi;
+
+public class RMIClass {
+
+}

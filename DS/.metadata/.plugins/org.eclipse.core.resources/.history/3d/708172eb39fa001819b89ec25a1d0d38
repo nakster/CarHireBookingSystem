@@ -1,0 +1,22 @@
+package ie.gmit.sw.Model;
+
+import java.io.Serializable;
+import java.util.*;
+
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
+public class Order implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	private int OrderID;
+	private Date Date;	
+	private int cust;
+	private int car; 
+	
+
+}
