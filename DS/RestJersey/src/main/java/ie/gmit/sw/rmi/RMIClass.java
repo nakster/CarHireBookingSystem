@@ -19,4 +19,9 @@ public class RMIClass {
 		return ch.read();
 	}
 
+	// ============== READ ====================
+	public void delete(int id) throws Exception {
+		ch.delete(id);;
+	}
+
 }
