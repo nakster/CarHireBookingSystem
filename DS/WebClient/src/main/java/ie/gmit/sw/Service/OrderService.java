@@ -13,10 +13,24 @@ import javax.xml.bind.Unmarshaller;
 
 import org.springframework.stereotype.Service;
 
+import com.sun.jersey.api.client.Client;
+import com.sun.jersey.api.client.GenericType;
+import com.sun.jersey.api.client.WebResource;
+
 import ie.gmit.sw.Models.Order;
 
 @Service
 public class OrderService {
+	
+	public List<Order> getOrder(){
+		
+		Client client = Client.create();
+		
+		WebResource web = client.resource("http://localhost:8080/RestJersey/webapi/read");
+		
+		return web.get(new GenericType<List<Order>>(){});
+		
+	}
 
 	public List<Order> getOrders() throws IOException, JAXBException {
 	

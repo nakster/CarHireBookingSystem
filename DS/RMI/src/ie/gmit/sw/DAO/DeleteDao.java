@@ -24,7 +24,6 @@ public class DeleteDao {
 		
 		p.close();
 		System.out.println("Deleted");
-		
 	}
 
 }

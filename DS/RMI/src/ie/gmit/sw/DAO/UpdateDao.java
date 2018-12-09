@@ -36,5 +36,4 @@ public class UpdateDao {
 		conn.close();
 		System.out.println("Updated");
 	}
-
 }

@@ -7,7 +7,9 @@ import java.util.List;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
+import javax.ws.rs.core.GenericEntity;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 
 import ie.gmit.sw.Model.Order;
 import ie.gmit.sw.rmi.RMIClass;
@@ -29,9 +31,14 @@ public class ReadOrder {
 	 */
 	@GET
 	@Produces(MediaType.APPLICATION_XML)
-	public List<Order> getIt() throws MalformedURLException, RemoteException, Exception {
+	public Response getIt() throws MalformedURLException, RemoteException, Exception {
 
 		RMIClass r = new RMIClass();
-		return r.read();
+		List<Order> orders =  r.read();
+		
+		final GenericEntity <List<Order>> en = new GenericEntity<List<Order>>(orders) {};
+		
+		return Response.status(200).entity(en).build();
 	}
+	
 }

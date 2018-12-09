@@ -26,12 +26,12 @@ public class OrderController {
 	public String getShips(Model m) throws IOException, JAXBException {
 
 		List<Order> orders = (ArrayList<Order>) orderService.getOrders();
-		
-		for (Order order : orders) {
-			System.out.println(order.getOrderID());
-			System.out.println(order.getCar().toString());
-			System.out.println(order.getCustomer().toString());
-		}
+
+//		for (Order order : orders) {
+//			System.out.println(order.getOrderID());
+//			System.out.println(order.getCar().toString());
+//			System.out.println(order.getCustomer().toString());
+//		}
 
 		m.addAttribute("orders", orders);
 
