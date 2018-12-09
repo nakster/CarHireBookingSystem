@@ -21,8 +21,6 @@
 		<c:forEach items="${orders}" var="order">
 			<tr>
 				<td>${order.orderID}</td>
-				<td>${order.cust}</td>
-				<td>${order.car}</td>
 				<td>${order.date}</td>
 			</tr>
 		</c:forEach>

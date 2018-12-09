@@ -5,5 +5,5 @@
 // Generated on: 2018.12.08 at 06:31:01 PM GMT 
 //
 
-@javax.xml.bind.annotation.XmlSchema(namespace = "http://www.example.org/generateSchema", elementFormDefault = javax.xml.bind.annotation.XmlNsForm.QUALIFIED)
+@javax.xml.bind.annotation.XmlSchema(elementFormDefault = javax.xml.bind.annotation.XmlNsForm.QUALIFIED)
 package ie.gmit.sw.Model;
