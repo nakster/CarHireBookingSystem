@@ -26,8 +26,8 @@
 			</tr>
 			<tr>
 				<td>Current Date:</td>
-				<td><form:select path="d" items="${date}" /></td>
-				<td><form:errors path="d" items="${date}" /></td>
+				<td><form:select path="date" items="${date}" /></td>
+				<td><form:errors path="date" items="${date}" /></td>
 			</tr>
 			<tr>
 				<td colspan="2"><input type="submit" value="Create Order" /></td>

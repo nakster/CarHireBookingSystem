@@ -12,7 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import ie.gmit.sw.Models.Order;
+import ie.gmit.sw.Model.Order;
 import ie.gmit.sw.Service.OrderService;
 
 @Controller
@@ -25,7 +25,8 @@ public class OrderController {
 	@RequestMapping(value = "/showOrders", method = RequestMethod.GET)
 	public String getShips(Model m) throws IOException, JAXBException {
 
-		List<Order> orders = (ArrayList<Order>) orderService.getOrders();
+//		List<Order> orders = (ArrayList<Order>) orderService.getOrder();
+		List<Order> orders = orderService.getOrder();
 
 //		for (Order order : orders) {
 //			System.out.println(order.getOrderID());

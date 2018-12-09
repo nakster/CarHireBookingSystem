@@ -11,9 +11,9 @@ import javax.xml.bind.Marshaller;
 
 import org.springframework.stereotype.Service;
 
-import ie.gmit.sw.Models.Car;
-import ie.gmit.sw.Models.Customer;
-import ie.gmit.sw.Models.Order;
+import ie.gmit.sw.Model.Car;
+import ie.gmit.sw.Model.Customer;
+import ie.gmit.sw.Model.Order;
 
 @Service
 public class InsertService {

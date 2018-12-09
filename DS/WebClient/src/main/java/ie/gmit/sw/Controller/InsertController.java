@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import ie.gmit.sw.Models.Order;
+import ie.gmit.sw.Model.Order;
 import ie.gmit.sw.Service.InsertService;
 import ie.gmit.sw.Service.OrderService;
 
@@ -42,7 +42,7 @@ public class InsertController {
 	@RequestMapping(value = "/CreateOrder", method = RequestMethod.GET)
 	public String createOrder(Model m, @ModelAttribute("order") Order order, HttpServletRequest h) throws IOException, JAXBException {
 	
-		List<Order> orders = orderService.getOrders();
+		List<Order> orders = orderService.getOrder();
 		
 		Map<Long,String> custList = new HashMap<Long,String>();
 		Map<Long,String> carList = new HashMap<Long,String>();
@@ -52,8 +52,8 @@ public class InsertController {
 		}
 		
 
-		Map<Long, String> d = new HashMap<Long,String>();
-		d.put((long) 1, dateFormat.format(date));
+		Map<Date, String> d = new HashMap<Date,String>();
+		d.put( date, dateFormat.format(date));
 		
 		m.addAttribute("custList", custList);
 		m.addAttribute("carList", carList);
