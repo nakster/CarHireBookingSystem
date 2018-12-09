@@ -1,14 +1,12 @@
 package ie.gmit.sw.Models;
 
 import java.io.Serializable;
-import java.util.List;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlRootElement(name = "customers")
+@XmlRootElement
 public class Customer implements Serializable{
 	
 	private static final long serialVersionUID = 2438158765739915938L;
@@ -18,10 +16,7 @@ public class Customer implements Serializable{
 	private int Mobile;
 	private String Country;
 	private String Email;
-	
-	@XmlElement(name = "customer")
-	private List<Customer> customers = null;
-	
+
 	public Customer() {
 		super();
 	}
@@ -84,13 +79,10 @@ public class Customer implements Serializable{
 		Email = email;
 	}
 
-	public List<Customer> getCustomers() {
-		return customers;
-	}
 
-	public void setCustomers(List<Customer> customers) {
-		this.customers = customers;
+	@Override
+	public String toString() {
+		return "Customer [CustID=" + CustID + ", FirstName=" + FirstName + ", LastName=" + LastName + ", Mobile="
+				+ Mobile + ", Country=" + Country + ", Email=" + Email + "]";
 	}
-
-	
 }

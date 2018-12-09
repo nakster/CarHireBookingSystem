@@ -16,9 +16,30 @@ public class Order implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private int OrderID;
 	private Date Date;
-	private Customer cust;
-	private Car car;
+	private Customer customer;//these names have to be the same as in the xml format
+	private Car car;// same here or it will not work 
 	
+//<orders>	 //@XmlRootElement(name = "orders")
+//		<Order>
+//			<OrderID>1</OrderID>
+//			<Date>2018-11-25Z</Date>
+//			<car>
+//				<CarID>2</CarID>
+//				<CarColour>red</CarColour>
+//				<CarBrand>Ford Fiesta </CarBrand>
+//				<CarModel>Fiesta</CarModel>
+//				<PurchaseDate>2018-11-25Z</PurchaseDate>
+//			</car>
+//			<customer> //	private Customer customer;
+//				<CustID>3</CustID>
+//				<FirstName>Mark</FirstName>
+//				<LastName>Healy</LastName>
+//				<Mobile>896757835</Mobile>
+//				<Country>Ireland</Country>
+//				<Email>Mark@gmail.com</Email>
+//			</customer>
+//		</Order>
+//</orders>	
 	//for just displaying it in spring
 	private String d;
 
@@ -29,11 +50,11 @@ public class Order implements Serializable {
 		super();
 	}
 
-	public Order(int orderID, java.util.Date date, Customer cust, Car car, String d) {
+	public Order(int orderID, java.util.Date date, Customer customer, Car car, String d) {
 		super();
 		OrderID = orderID;
 		Date = date;
-		this.cust = cust;
+		this.customer = customer;
 		this.car = car;
 		this.d = d;
 	}
@@ -72,12 +93,12 @@ public class Order implements Serializable {
 		this.d = d;
 	}
 
-	public Customer getCust() {
-		return cust;
+	public Customer getCustomer() {
+		return customer;
 	}
 
-	public void setCust(Customer cust) {
-		this.cust = cust;
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
 	}
 
 	public Car getCar() {

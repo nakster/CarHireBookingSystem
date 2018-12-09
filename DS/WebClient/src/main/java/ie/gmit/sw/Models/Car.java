@@ -2,14 +2,12 @@ package ie.gmit.sw.Models;
 
 import java.io.Serializable;
 import java.util.Date;
-import java.util.List;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlRootElement(name = "cars")
+@XmlRootElement
 public class Car implements Serializable{
 
 	private static final long serialVersionUID = 1L;
@@ -18,9 +16,6 @@ public class Car implements Serializable{
 	private String CarBrand;
 	private String CarModel;
 	private Date PurchaseDate;
-	
-	@XmlElement(name = "car")
-	private List<Car> cars = null;
 	
 	public Car() {
 		super();
@@ -75,12 +70,11 @@ public class Car implements Serializable{
 		PurchaseDate = purchaseDate;
 	}
 
-	public List<Car> getCars() {
-		return cars;
-	}
 
-	public void setCars(List<Car> cars) {
-		this.cars = cars;
+	@Override
+	public String toString() {
+		return "Car [CarID=" + CarID + ", CarColour=" + CarColour + ", CarBrand=" + CarBrand + ", CarModel=" + CarModel
+				+ ", PurchaseDate=" + PurchaseDate  + "]";
 	}
 	
 }

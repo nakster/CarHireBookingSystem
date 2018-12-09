@@ -29,6 +29,8 @@ public class OrderController {
 		
 		for (Order order : orders) {
 			System.out.println(order.getOrderID());
+			System.out.println(order.getCar().toString());
+			System.out.println(order.getCustomer().toString());
 		}
 
 		m.addAttribute("orders", orders);

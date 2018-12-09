@@ -14,13 +14,23 @@
 		<tr>
 			<th>Order ID</th>
 			<th>Customer ID</th>
-			<th>Car ID</th>
+			<th>Name</th>
+			<th>Country</th>
+			<th>Car Type</th>
+			<th>Car Brand</th>
+			<th>Car Colour</th>
 			<th>Order Date</th>
 		</tr>
 		<!-- the names are methods without the capital orderID and not the variable names-->
 		<c:forEach items="${orders}" var="order">
 			<tr>
 				<td>${order.orderID}</td>
+				<td>${order.customer.custID}</td>
+				<td>${order.customer.firstName} ${order.customer.lastName}</td>
+				<td>${order.customer.country}</td>
+				<td>${order.car.carBrand}</td>
+				<td>${order.car.carModel}</td>
+				<td>${order.car.carColour}</td>
 				<td>${order.date}</td>
 			</tr>
 		</c:forEach>
