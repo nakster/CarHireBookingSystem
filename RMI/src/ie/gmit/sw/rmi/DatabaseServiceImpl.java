@@ -5,10 +5,12 @@ import java.rmi.server.UnicastRemoteObject;
 import java.sql.SQLException;
 import java.util.List;
 
+import ie.gmit.sw.CustomerDAO.CreateCustDao;
 import ie.gmit.sw.DAO.CreateDao;
 import ie.gmit.sw.DAO.DeleteDao;
 import ie.gmit.sw.DAO.ReadDao;
 import ie.gmit.sw.DAO.UpdateDao;
+import ie.gmit.sw.Model.Customer;
 import ie.gmit.sw.Model.Order;
 
 public class DatabaseServiceImpl extends UnicastRemoteObject implements DatabaseService {
@@ -18,6 +20,7 @@ public class DatabaseServiceImpl extends UnicastRemoteObject implements Database
 	private DeleteDao deleteDao;
 	private UpdateDao updateDao;
 	private CreateDao createDao;
+	private CreateCustDao createCustDao;
 
 	protected DatabaseServiceImpl() throws RemoteException, SQLException {
 		super();
@@ -51,6 +54,13 @@ public class DatabaseServiceImpl extends UnicastRemoteObject implements Database
 		//adds a new order
 		createDao = new CreateDao();
 		createDao.Create(custId, carId);
+	}
+
+	@Override
+	public void createCust(Customer c) throws RemoteException, SQLException {
+		//create new customer 
+		createCustDao = new CreateCustDao();
+		createCustDao.Create(c);
 	}
 
 }

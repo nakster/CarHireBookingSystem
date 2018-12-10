@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import java.util.Date;
 import java.util.List;
 
+import ie.gmit.sw.Model.Customer;
 import ie.gmit.sw.Model.Order;
 
 public interface DatabaseService extends Remote {
@@ -21,4 +22,7 @@ public interface DatabaseService extends Remote {
 
 	// this method here creates a booking
 	public void create(int custId, int carId) throws RemoteException, SQLException;
+
+	// this method here creates a customer
+	public void createCust(Customer c) throws RemoteException, SQLException;
 }
