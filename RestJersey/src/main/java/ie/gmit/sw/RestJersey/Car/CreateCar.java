@@ -12,8 +12,10 @@ import ie.gmit.sw.rmi.RMIClass;
 @Path("createCar")
 public class CreateCar {
 
+	//create an instance od the rmi class 
 	private RMIClass r;
 
+	////create a new car
 	@POST
 	@Consumes(MediaType.APPLICATION_XML)
 	@Produces(MediaType.APPLICATION_XML)

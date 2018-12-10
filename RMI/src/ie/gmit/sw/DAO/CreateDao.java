@@ -10,21 +10,25 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class CreateDao {
-	
+
+	// variables
 	private Connection conn;
 	private PreparedStatement p = null;
+	// date
 	private DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 	private Date date = new Date();
-	
+
+	// make a connection
 	public CreateDao() throws SQLException {
 		super();
 		conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/carhire?useSSL=false", "root", "");
 	}
 
+	//this creates a new order
 	public void Create(int custId, int carId) throws RemoteException, SQLException {
-		
+
 		String d = dateFormat.format(date);
-		
+
 		// get the current date
 		System.out.println("inserting into mysql");
 		System.out.println("Date: " + d);

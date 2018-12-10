@@ -7,14 +7,17 @@ import java.sql.SQLException;
 
 public class DeleteDao {
 	
+	//variables 
 	private Connection conn;
 	private PreparedStatement p = null;
 	
+	//make a connection
 	public DeleteDao() throws SQLException {
 		super();
 		conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/carhire?useSSL=false", "root", "");
 	}
 
+	// deletes a order
 	public void deleteOrder(int id) throws SQLException {
 		System.out.println("Delete from DataBase with ID " + id);
 		

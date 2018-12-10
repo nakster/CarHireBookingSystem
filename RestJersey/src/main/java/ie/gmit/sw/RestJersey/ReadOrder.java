@@ -29,6 +29,7 @@ public class ReadOrder {
 	 * @throws RemoteException
 	 * @throws MalformedURLException
 	 */
+	//this gets a list of oorders
 	@GET
 	@Produces(MediaType.APPLICATION_XML)
 	public Response getIt() throws MalformedURLException, RemoteException, Exception {

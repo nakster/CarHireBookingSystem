@@ -10,14 +10,16 @@ import ie.gmit.sw.Model.Car;
 
 public class CreateCarDao {
 	
+	//connection 
 	private Connection conn;
 	private PreparedStatement p = null;
-	
+	//make a connection
 	public CreateCarDao() throws SQLException {
 		super();
 		conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/carhire?useSSL=false", "root", "");
 	}
 
+	//this creates a car 
 	public void Create(Car c) throws RemoteException, SQLException {
 		// get the current date
 		System.out.println("inserting into mysql");

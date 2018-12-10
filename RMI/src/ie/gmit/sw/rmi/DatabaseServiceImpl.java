@@ -19,6 +19,7 @@ import ie.gmit.sw.Model.Order;
 
 public class DatabaseServiceImpl extends UnicastRemoteObject implements DatabaseService {
 
+	//variables 
 	private static final long serialVersionUID = 1L;
 	private ReadDao readDao;
 	private DeleteDao deleteDao;
@@ -70,18 +71,21 @@ public class DatabaseServiceImpl extends UnicastRemoteObject implements Database
 		createCustDao.Create(c);
 	}
 
+	//creates a new car
 	@Override
 	public void createCar(Car c) throws RemoteException, SQLException {
 		createCarDao = new CreateCarDao();
 		createCarDao.Create(c);
 	}
 
+	// reads all the customers 
 	@Override
 	public List<Customer> readCust() throws RemoteException, SQLException {
 		readCustDao = new ReadCustDao();
 		return readCustDao.read();
 	}
 
+	//reads all the cars 
 	@Override
 	public List<Car> readCar() throws RemoteException, SQLException {
 		readCarDao = new ReadCarDao();

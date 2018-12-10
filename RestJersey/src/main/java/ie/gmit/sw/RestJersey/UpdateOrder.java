@@ -12,9 +12,10 @@ import ie.gmit.sw.rmi.RMIClass;
 @Path("update")
 public class UpdateOrder {
 	
+	//create an instance od the rmi class 
 	private RMIClass r ;
 	
-	
+	//updates a order
 	@PUT
     @Consumes(MediaType.APPLICATION_XML)
 	@Produces(MediaType.APPLICATION_XML)

@@ -5,22 +5,21 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 import ie.gmit.sw.Model.Customer;
 
 public class CreateCustDao {
 	
+	//connection variables 
 	private Connection conn;
 	private PreparedStatement p = null;
-	
+	//make a connection
 	public CreateCustDao() throws SQLException {
 		super();
 		conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/carhire?useSSL=false", "root", "");
 	}
 
+	//this creates a customer
 	public void Create(Customer c) throws RemoteException, SQLException {
 		// get the current date
 		System.out.println("inserting into mysql");

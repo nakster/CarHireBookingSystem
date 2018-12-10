@@ -12,8 +12,10 @@ import ie.gmit.sw.rmi.RMIClass;
 @Path("delete")
 public class DeleteOrder {
 	
+	//create an instance od the rmi class 
 	private RMIClass r ;
 	
+	// delete a order
     @DELETE
     @Consumes(MediaType.APPLICATION_XML)
 	@Produces(MediaType.APPLICATION_XML)

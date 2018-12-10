@@ -11,9 +11,11 @@ import ie.gmit.sw.rmi.RMIClass;
 
 @Path("create")
 public class CreateOrder {
-
+	
+	//create an instance od the rmi class 
 	private RMIClass r;
 
+	//this here creates a order
 	@POST
 	@Consumes(MediaType.APPLICATION_XML)
 	@Produces(MediaType.APPLICATION_XML)
@@ -21,6 +23,7 @@ public class CreateOrder {
 
 		System.out.println("Order added custID : " + s.getCustomer().getCustID());
 		r = new RMIClass();
+		//send the order object to rmi
 		r.create(s.getCustomer().getCustID(), s.getCar().getCarID());
 		return s;
 	}

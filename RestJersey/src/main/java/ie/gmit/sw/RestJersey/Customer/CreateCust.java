@@ -12,8 +12,10 @@ import ie.gmit.sw.rmi.RMIClass;
 @Path("createCust")
 public class CreateCust {
 
+	//create an instance od the rmi class 
 	private RMIClass r;
 
+	//create a customer
 	@POST
 	@Consumes(MediaType.APPLICATION_XML)
 	@Produces(MediaType.APPLICATION_XML)

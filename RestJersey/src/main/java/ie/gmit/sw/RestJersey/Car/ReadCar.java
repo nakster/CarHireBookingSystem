@@ -29,6 +29,7 @@ public class ReadCar {
 	 * @throws RemoteException
 	 * @throws MalformedURLException
 	 */
+	//reads all the car objects 
 	@GET
 	@Produces(MediaType.APPLICATION_XML)
 	public Response getIt() throws MalformedURLException, RemoteException, Exception {
