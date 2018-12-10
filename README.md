@@ -50,6 +50,8 @@ Remote Object into the RMI registry using the name “databaseservice”.
   3. import it
 5. Do that to all the projects
 6. Run RMI as java application
+ 1. you have to add the mysql connector which is included in the project
+ 2. right click , properties , build path , libraries , add external jars 
 7. Run jersey application on tomcat
   1. Add tomcat 9 
 8. Run spring app 
