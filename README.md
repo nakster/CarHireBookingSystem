@@ -57,4 +57,4 @@ Remote Object into the RMI registry using the name “databaseservice”.
 * Run spring app 
 * http://localhost:8081/index.html Works on this url
 * When you run the project with Spring boot the password is user and username is user
-
+* You need Wamp to run the project the mysql file is included with some values.
