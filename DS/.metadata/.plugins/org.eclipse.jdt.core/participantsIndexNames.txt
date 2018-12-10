@@ -1,3 +1,0 @@
-INDEX VERSION 1.131
-C:\Users\naqia\Desktop\Sarah\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2487230805.index
-\RestJersey\src\main\java
