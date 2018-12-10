@@ -16,6 +16,7 @@
 			<th>Customer ID</th>
 			<th>Name</th>
 			<th>Country</th>
+			<th>Car ID</th>
 			<th>Car Type</th>
 			<th>Car Brand</th>
 			<th>Car Colour</th>
@@ -28,6 +29,7 @@
 				<td>${order.customer.custID}</td>
 				<td>${order.customer.firstName} ${order.customer.lastName}</td>
 				<td>${order.customer.country}</td>
+				<td>${order.car.carID}</td>
 				<td>${order.car.carBrand}</td>
 				<td>${order.car.carModel}</td>
 				<td>${order.car.carColour}</td>
@@ -35,7 +37,6 @@
 			</tr>
 		</c:forEach>
 	</table>
-
 	<br>
 	<a href="/index.html">Home</a>
 </body>

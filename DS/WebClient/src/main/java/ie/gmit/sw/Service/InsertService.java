@@ -1,36 +1,15 @@
 package ie.gmit.sw.Service;
 
-import java.io.BufferedOutputStream;
-import java.io.IOException;
-import java.io.OutputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.Marshaller;
-
 import org.springframework.stereotype.Service;
 
 import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.ClientResponse;
 import com.sun.jersey.api.client.WebResource;
 
-import ie.gmit.sw.Model.Car;
-import ie.gmit.sw.Model.Customer;
 import ie.gmit.sw.Model.Order;
 
 @Service
 public class InsertService {
-
-	private DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-	private Date date = new Date();
-	private final String USER_AGENT = "Mozilla/5.0";
-	static Order order = new Order();
-	
 	
 	private String url = "http://localhost:8080/RestJersey/webapi/create";
 
