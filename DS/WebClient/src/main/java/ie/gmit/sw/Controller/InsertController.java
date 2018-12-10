@@ -76,7 +76,6 @@ public class InsertController {
 				System.out.println("Insert from Controlllllllller");
 				System.out.println("cust id from controller" + order.getCustomer().getCustID());
 				System.out.println("cust id from controller" + order.getCar().getCarID());
-				insertService.create(order.getCustomer().getCustID(), order.getCar().getCarID());
 				insertService.createOrder(order);
 				return "redirect:showOrders";
 			}
