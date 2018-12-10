@@ -54,4 +54,5 @@ Remote Object into the RMI registry using the name “databaseservice”.
   1. Add tomcat 9 
 8. Run spring app 
 9. http://localhost:8081/index.html Works on this url
+10. When you run the project with Spring boot the password is user and username is user
 
