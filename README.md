@@ -41,20 +41,20 @@ Remote Object into the RMI registry using the name “databaseservice”.
 
 
 ## How to download And Run Project
-1. Git clone the project Clone [Download](https://github.com/nakster/CarHireBookingSystem.git)
-2. Change to the folder where you cloned it.
-3. Open eclipse jee
-4. In the Navigation Bar go to file
-  1. Open from file system
-  2. Browse where it is
-  3. import it
-5. Do that to all the projects
-6. Run RMI as java application
- 1. you have to add the mysql connector which is included in the project
- 2. right click , properties , build path , libraries , add external jars 
-7. Run jersey application on tomcat
-  1. Add tomcat 9 
-8. Run spring app 
-9. http://localhost:8081/index.html Works on this url
-10. When you run the project with Spring boot the password is user and username is user
+* Git clone the project Clone [Download](https://github.com/nakster/CarHireBookingSystem.git)
+* Change to the folder where you cloned it.
+* Open eclipse jee
+* In the Navigation Bar go to file
+  * Open from file system
+  * Browse where it is
+  * import it
+* Do that to all the projects
+* Run RMI as java application
+  * you have to add the mysql connector which is included in the project
+  * right click , properties , build path , libraries , add external jars 
+* Run jersey application on tomcat
+  * Add tomcat 9 
+* Run spring app 
+* http://localhost:8081/index.html Works on this url
+* When you run the project with Spring boot the password is user and username is user
 
