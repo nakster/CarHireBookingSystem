@@ -1,7 +1,6 @@
 package ie.gmit.sw.CarControllers;
 
 import java.io.IOException;
-import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
