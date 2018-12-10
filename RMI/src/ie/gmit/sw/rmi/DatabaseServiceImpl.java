@@ -5,11 +5,15 @@ import java.rmi.server.UnicastRemoteObject;
 import java.sql.SQLException;
 import java.util.List;
 
+import ie.gmit.sw.CarDAO.CreateCarDao;
+import ie.gmit.sw.CarDAO.ReadCarDao;
 import ie.gmit.sw.CustomerDAO.CreateCustDao;
+import ie.gmit.sw.CustomerDAO.ReadCustDao;
 import ie.gmit.sw.DAO.CreateDao;
 import ie.gmit.sw.DAO.DeleteDao;
 import ie.gmit.sw.DAO.ReadDao;
 import ie.gmit.sw.DAO.UpdateDao;
+import ie.gmit.sw.Model.Car;
 import ie.gmit.sw.Model.Customer;
 import ie.gmit.sw.Model.Order;
 
@@ -21,6 +25,9 @@ public class DatabaseServiceImpl extends UnicastRemoteObject implements Database
 	private UpdateDao updateDao;
 	private CreateDao createDao;
 	private CreateCustDao createCustDao;
+	private CreateCarDao createCarDao;
+	private ReadCustDao readCustDao;
+	private ReadCarDao readCarDao;
 
 	protected DatabaseServiceImpl() throws RemoteException, SQLException {
 		super();
@@ -61,6 +68,24 @@ public class DatabaseServiceImpl extends UnicastRemoteObject implements Database
 		//create new customer 
 		createCustDao = new CreateCustDao();
 		createCustDao.Create(c);
+	}
+
+	@Override
+	public void createCar(Car c) throws RemoteException, SQLException {
+		createCarDao = new CreateCarDao();
+		createCarDao.Create(c);
+	}
+
+	@Override
+	public List<Customer> readCust() throws RemoteException, SQLException {
+		readCustDao = new ReadCustDao();
+		return readCustDao.read();
+	}
+
+	@Override
+	public List<Car> readCar() throws RemoteException, SQLException {
+		readCarDao = new ReadCarDao();
+		return readCarDao.read();
 	}
 
 }

@@ -23,12 +23,12 @@
 	<!--CustID | FirstName | LastName | Mobile     | Country | Email  -->
 		<c:forEach items="${orders}" var="order">
 			<tr>
-				<td>${order.customer.custID}</td>
-				<td>${order.customer.firstName}</td>
-				<td>${order.customer.lastName}</td>
-				<td>${order.customer.mobile}</td>
-				<td>${order.customer.country}</td>
-				<td>${order.customer.email}</td>
+				<td>${order.custID}</td>
+				<td>${order.firstName}</td>
+				<td>${order.lastName}</td>
+				<td>${order.mobile}</td>
+				<td>${order.country}</td>
+				<td>${order.email}</td>
 			</tr>
 		</c:forEach>
 	</table>

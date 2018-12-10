@@ -6,29 +6,27 @@
 <head>
 <link href="/css/styles.css" rel="stylesheet" />
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Display Cars</title>
 </head>
 <body>
 	<h1>Orders Made</h1>
 	<table>
 		<tr>
-			<th>Customer ID</th>
-			<th>FirstName</th>
-			<th>LastName</th>
-			<th>Mobile</th>
-			<th>Country</th>
-			<th>Email</th>
+			<th>Car ID</th>
+			<th>carColour</th>
+			<th>carBrand</th>
+			<th>carModel</th>
+			<th>purchaseDate</th>
 		</tr>
 		<!-- the names are methods without the capital orderID and not the variable names-->
-	<!--CustID | FirstName | LastName | Mobile     | Country | Email  -->
+		<!-- CarID | CarColour | CarBrand       | CarModel | PurchaseDate -->
 		<c:forEach items="${orders}" var="order">
 			<tr>
-				<td>${order.customer.custID}</td>
-				<td>${order.customer.firstName}</td>
-				<td>${order.customer.lastName}</td>
-				<td>${order.customer.mobile}</td>
-				<td>${order.customer.country}</td>
-				<td>${order.customer.email}</td>
+				<td>${order.carID}</td>
+				<td>${order.carColour}</td>
+				<td>${order.carBrand}</td>
+				<td>${order.carModel}</td>
+				<td>${order.purchaseDate}</td>
 			</tr>
 		</c:forEach>
 	</table>

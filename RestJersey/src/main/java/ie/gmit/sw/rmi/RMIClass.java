@@ -1,8 +1,11 @@
 package ie.gmit.sw.rmi;
 
 import java.rmi.Naming;
+import java.rmi.RemoteException;
+import java.sql.SQLException;
 import java.util.List;
 
+import ie.gmit.sw.Model.Car;
 import ie.gmit.sw.Model.Customer;
 import ie.gmit.sw.Model.Order;
 
@@ -34,11 +37,23 @@ public class RMIClass {
 	public void create(int custId, int carId) throws Exception {
 		ch.create(custId, carId);
 	}
-	
+
 	// ================== Cust
 	public void createCust(Customer c) throws Exception {
 		ch.createCust(c);
 	}
 
-	
+	public List<Customer> readCust() throws Exception {
+		return ch.readCust();
+	}
+
+	public void createCar(Car s) throws RemoteException, SQLException {
+		// TODO Auto-generated method stub
+		ch.createCar(s);
+
+	}
+
+	public List<Car> readCar() throws Exception {
+		return ch.readCar();
+	}
 }
