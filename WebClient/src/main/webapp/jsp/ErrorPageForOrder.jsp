@@ -7,6 +7,6 @@
 <title>Null Pointer Exception</title>
 </head>
 <body>
-<h1>Null Pointer Exception Found</h1>
+	<h1>Null Pointer Exception Found</h1>
 </body>
 </html>
